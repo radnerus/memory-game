@@ -65,10 +65,16 @@ createCanvas();
 function createCanvas() {
   for (let i = 0; i < CARDS_COUNT; i++) {
     const imgEle = document.createElement('img');
+
     imgEle.setAttribute('class', 'card unsolved');
     imgEle.setAttribute('data-src', items[i].src);
     imgEle.setAttribute('data-id', items[i].id);
-    //   imgEle.setAttribute('id', `image-${i}`);
+
+    const image = new Image();
+    image.src = items[i].src;
+
+    // imgEle.image = image;
+
     imgEle.addEventListener('click', revealCard);
     cards.appendChild(imgEle);
   }
@@ -79,6 +85,7 @@ function revealCard() {
     return;
   }
 
+  console.log(this.image);
   openedCount++;
   result.textContent = openedCount;
 
