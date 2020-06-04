@@ -69,6 +69,7 @@ function createCanvas() {
     imgEle.setAttribute('class', 'card unsolved');
     imgEle.setAttribute('data-src', items[i].src);
     imgEle.setAttribute('data-id', items[i].id);
+    imgEle.setAttribute('id', `image-${i}`);
 
     const image = new Image();
     image.src = items[i].src;
@@ -85,13 +86,18 @@ function revealCard() {
     return;
   }
 
+  const dataID = this.getAttribute('id');
+
+  if (currentCardsID.includes(dataID)) {
+    return;
+  }
+
   console.log(this.image);
   openedCount++;
   result.textContent = openedCount;
 
   this.classList.add('open');
   const imagePath = this.getAttribute('data-src');
-  const dataID = this.getAttribute('data-id');
 
   currentCardsID.push(dataID);
   currentCards.push(this);
@@ -105,11 +111,9 @@ function revealCard() {
 
 function checkCard() {
   if (currentCards.length === 2) {
-    const cardOneID = currentCardsID[0];
     const cardOne = currentCards[0];
-    const cardTwoID = currentCardsID[1];
     const cardTwo = currentCards[1];
-    if (cardOneID === cardTwoID) {
+    if (cardOne.src === cardTwo.src) {
       cardOne.classList.remove('unsolved');
       cardTwo.classList.remove('unsolved');
       cardOne.classList.add('solved');
