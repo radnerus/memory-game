@@ -31,18 +31,23 @@ h2 {
 .card {
     width: 15vh;
     height: 15vh;
-    /* outline: 1px solid rgb(255, 200, 0); */
+    /* outline      : 1px solid rgb(255, 200, 0); */
     border: 0px;
+    background-color: #ffffff;
 }
 
 .unsolved {
     background-image: linear-gradient(-135deg, #1400c8, #b900b4, #f50000);
+    background-color: #ffffff;
+    /* background-size: 100%; */
     border: 0;
+    /* transition     : background-image 1s ease-in-out; */
 }
 
 .open {
     background-color: #ffffff;
     background-image: none;
+    /* background-size: 0%; */
 }
 
 footer {
