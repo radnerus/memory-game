@@ -12,6 +12,7 @@ h2 {
 }
 
 .container {
+    background-image: linear-gradient(141deg, rgb(159, 184, 173) 0%, rgb(31, 200, 219) 51%, rgb(44, 181, 232) 75%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +24,7 @@ h2 {
     display: flex;
     height: 45vh;
     width: 60vh;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     flex-wrap: wrap;
 }
 
@@ -35,7 +36,7 @@ h2 {
 }
 
 .unsolved {
-    background-image: linear-gradient(45deg, rgba(255, 0, 0, 0.3), rgba(255, 200, 0, 1));
+    background-image: linear-gradient(-135deg, #1400c8, #b900b4, #f50000);
     border: 0;
 }
 
@@ -51,9 +52,10 @@ footer {
 }
 
 footer a {
-    color: rgb(29, 161, 242);
+    color: #fff;
     font-size: 14px;
     text-decoration: none;
+    letter-spacing: 0.2em;
 }
 
 footer a:hover {
