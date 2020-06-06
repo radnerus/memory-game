@@ -59,6 +59,7 @@ items.sort(() => 0.5 - Math.random());
 let currentCards = [];
 let currentCardsID = [];
 let openedCount = 0;
+let wait = false;
 
 createCanvas();
 
@@ -92,6 +93,12 @@ function revealCard() {
     return;
   }
 
+  if (wait) {
+    return;
+  }
+
+  wait = true;
+
   console.log(this.image);
   openedCount++;
   result.textContent = openedCount;
@@ -105,6 +112,7 @@ function revealCard() {
   this.setAttribute('src', imagePath);
 
   setTimeout(() => {
+    wait = false;
     checkCard.call(this);
   }, 500);
 }
